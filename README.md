@@ -1,6 +1,6 @@
 # Dynamic Form and Design System
 
-A lead capture form built with React + TypeScript. The form renders itself from a config list, and the validation is one pure function. Styling is plain CSS modules, with no component library and no form library.
+A lead capture form built with React + TypeScript. The form renders itself from a config list, and the validation is one pure function. Styling is plain CSS modules, with no component library and no form library. The only build extra is a small PostCSS plugin, so media queries can use the breakpoint tokens.
 
 ## Install and run
 
@@ -19,7 +19,8 @@ src/
   styles/global.css               base styles, imports the tokens
 
   design-system/                  generic, knows nothing about leads
-    tokens/tokens.css             colours, spacing, type, breakpoints
+    tokens/tokens.css             colours, spacing, type
+    tokens/breakpoints.css        breakpoints (--tablet-up, --desktop)
     atoms/                        TextInput, TextArea, Select, Checkbox, Button
     molecules/Field.tsx           label + control + hint + error
     form/
@@ -39,7 +40,7 @@ src/
 
 ## Where things live
 
-- **Tokens**: `src/design-system/tokens/tokens.css`
+- **Tokens**: `src/design-system/tokens/tokens.css` (CSS variables) and `src/design-system/tokens/breakpoints.css` (custom media, used as `@media (--desktop)`, wired up in `postcss.config.js`)
 - **Atoms**: `src/design-system/atoms/`. They only receive a value, a label and events. They don't contain any lead rules.
 - **Field molecule**: `src/design-system/molecules/Field.tsx`
 - **Form**: `src/design-system/form/DynamicForm.tsx`

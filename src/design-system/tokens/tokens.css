@@ -25,7 +25,6 @@
   --font-size-md: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.75rem;
-  --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 600;
   --line-height: 1.5;
@@ -33,9 +32,6 @@
   --radius-sm: 6px;
   --radius-md: 10px;
   --shadow-card: 0 1px 3px rgba(16, 24, 40, 0.08);
-
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
 }
 
 @media (prefers-color-scheme: dark) {

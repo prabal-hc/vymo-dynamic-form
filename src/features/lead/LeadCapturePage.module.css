@@ -41,7 +41,7 @@
   overflow-wrap: anywhere;
 }
 
-@media (min-width: 768px) {
+@media (--tablet-up) {
   .page {
     padding: var(--space-10) var(--space-6);
   }
