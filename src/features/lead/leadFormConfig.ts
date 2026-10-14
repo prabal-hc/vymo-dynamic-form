@@ -1,0 +1,75 @@
+import type { FieldConfig } from '../../design-system/form/types';
+
+// The whole lead form is described here.
+// To add a field, add an entry to this list.
+export const leadFormConfig: FieldConfig[] = [
+  {
+    name: 'fullName',
+    type: 'text',
+    label: 'Full name',
+    placeholder: 'e.g. Priya Sharma',
+    autoComplete: 'name',
+    width: 'half',
+    validations: [{ type: 'required' }],
+  },
+  {
+    name: 'email',
+    type: 'email',
+    label: 'Email',
+    placeholder: 'name@example.com',
+    autoComplete: 'email',
+    inputMode: 'email',
+    width: 'half',
+    validations: [{ type: 'required' }, { type: 'email' }],
+  },
+  {
+    name: 'leadType',
+    type: 'select',
+    label: 'Lead type',
+    placeholder: 'Select a lead type',
+    width: 'half',
+    options: [
+      { value: 'individual', label: 'Individual' },
+      { value: 'company', label: 'Company' },
+    ],
+    validations: [{ type: 'required' }],
+  },
+  {
+    name: 'companyName',
+    type: 'text',
+    label: 'Company name',
+    autoComplete: 'organization',
+    width: 'half',
+    showWhen: { field: 'leadType', equals: 'company' },
+    validations: [{ type: 'required' }],
+  },
+  {
+    name: 'phone',
+    type: 'text',
+    label: 'Phone',
+    hint: '10 digits, no spaces or country code',
+    placeholder: '9876543210',
+    autoComplete: 'tel-national',
+    inputMode: 'numeric',
+    width: 'half',
+    validations: [
+      { type: 'required' },
+      { type: 'pattern', pattern: /^\d{10}$/, message: 'Phone must be exactly 10 digits' },
+    ],
+  },
+  {
+    name: 'notes',
+    type: 'textarea',
+    label: 'Notes',
+    hint: 'Optional, up to 200 characters',
+    width: 'full',
+    validations: [{ type: 'maxLength', max: 200 }],
+  },
+  {
+    name: 'consent',
+    type: 'checkbox',
+    label: 'I agree to be contacted about this enquiry',
+    width: 'full',
+    validations: [{ type: 'required', message: 'Please give consent to continue' }],
+  },
+];

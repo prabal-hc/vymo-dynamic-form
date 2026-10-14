@@ -1,0 +1,49 @@
+/*
+  This file owns the form layout.
+  Mobile and tablet (up to 1024px): one column, submit button sticks to the bottom.
+  Desktop (over 1024px): two columns, submit button sits at the end of the form.
+*/
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.actions {
+  position: sticky;
+  bottom: 0;
+  margin-top: var(--space-6);
+  padding: var(--space-3) 0;
+  padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.actions button {
+  width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-6);
+  }
+
+  .full {
+    grid-column: 1 / -1;
+  }
+
+  .actions {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    margin: var(--space-8) 0 0;
+    padding: 0;
+    border-top: none;
+  }
+
+  .actions button {
+    width: auto;
+  }
+}

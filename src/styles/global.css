@@ -1,0 +1,23 @@
+@import "../design-system/tokens/tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height);
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}

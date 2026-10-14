@@ -1,0 +1,71 @@
+/*
+  Design tokens. Every colour, space and font size in the app comes from here.
+
+  Breakpoints (CSS variables can't be used inside @media, so the
+  media queries use these numbers directly):
+    mobile   below 768px
+    tablet   768px to 1024px  (uses the mobile layout)
+    desktop  above 1024px
+*/
+
+:root {
+  /* colours */
+  --color-bg: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-text: #1b1f27;
+  --color-text-muted: #5b6372;
+  --color-border: #d3d8e0;
+  --color-border-hover: #a9b1be;
+  --color-primary: #3a5bd9;
+  --color-primary-hover: #2e4bbd;
+  --color-primary-text: #ffffff;
+  --color-error: #c62f3c;
+  --color-focus: rgba(58, 91, 217, 0.3);
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* type */
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.75rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  --line-height: 1.5;
+
+  /* shape */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-card: 0 1px 3px rgba(16, 24, 40, 0.08);
+
+  /* breakpoints, for reference (see note above) */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #111318;
+    --color-surface: #1b1e25;
+    --color-text: #eceef2;
+    --color-text-muted: #a2a9b6;
+    --color-border: #363b46;
+    --color-border-hover: #4d5361;
+    --color-primary: #6d8bff;
+    --color-primary-hover: #8aa1ff;
+    --color-primary-text: #0d1020;
+    --color-error: #ff7b86;
+    --color-focus: rgba(109, 139, 255, 0.35);
+    --shadow-card: none;
+  }
+}
