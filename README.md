@@ -41,7 +41,7 @@ src/
 ## Where things live
 
 - **Tokens**: `src/design-system/tokens/tokens.css` (CSS variables) and `src/design-system/tokens/breakpoints.css` (custom media, used as `@media (--desktop)`, wired up in `postcss.config.js`)
-- **Atoms**: `src/design-system/atoms/`. They only receive a value, a label and events. They don't contain any lead rules.
+- **Atoms**: `src/design-system/atoms/`. They only receive a value and events. The Checkbox also takes its own label, and the Field molecule draws the label for the other inputs. They don't contain any lead rules.
 - **Field molecule**: `src/design-system/molecules/Field.tsx`
 - **Form**: `src/design-system/form/DynamicForm.tsx`
 - **Config**: `src/features/lead/leadFormConfig.ts`
