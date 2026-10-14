@@ -3,14 +3,13 @@ import styles from './Field.module.css';
 
 type FieldProps = {
   id: string;
-  label?: string; // checkboxes show their own label, so this is optional
+  label?: string;
   hint?: string;
   error?: string;
   required?: boolean;
   children: ReactNode;
 };
 
-// Label on top, then the control, then the hint and the error.
 export function Field({ id, label, hint, error, required = false, children }: FieldProps) {
   return (
     <div className={styles.field}>

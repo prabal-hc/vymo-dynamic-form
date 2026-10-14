@@ -14,13 +14,11 @@ function isEmpty(value: FieldValue): boolean {
   return value.trim() === '';
 }
 
-// Returns an error message if the value breaks the rule, otherwise null
 function checkRule(rule: ValidationRule, field: FieldConfig, value: FieldValue): string | null {
   if (rule.type === 'required') {
     return isEmpty(value) ? rule.message ?? `${field.label} is required` : null;
   }
 
-  // The other rules only check values that have been filled in
   if (isEmpty(value)) return null;
   const text = String(value).trim();
 
@@ -41,9 +39,6 @@ function checkRule(rule: ValidationRule, field: FieldConfig, value: FieldValue):
   return null;
 }
 
-// Takes the config and the current values and returns the errors.
-// It does not change anything, so it is easy to test.
-// Hidden fields are skipped, so Company name is only required when it is shown.
 export function validateForm(config: FieldConfig[], values: FormValues): FormErrors {
   const errors: FormErrors = {};
 
@@ -53,7 +48,7 @@ export function validateForm(config: FieldConfig[], values: FormValues): FormErr
     for (const rule of field.validations ?? []) {
       const error = checkRule(rule, field, values[field.name]);
       if (error) {
-        errors[field.name] = error; // keep only the first error per field
+        errors[field.name] = error;
         break;
       }
     }

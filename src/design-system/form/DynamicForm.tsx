@@ -17,10 +17,8 @@ export function DynamicForm({ config, validate, submitLabel = 'Submit', onSubmit
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
 
-  // Errors are worked out from the current values on every render
   const errors = validate(config, values);
 
-  // A field shows its error after it has been blurred, or after a submit attempt
   function getError(name: string) {
     if (touched[name] || submitted) return errors[name];
     return undefined;

@@ -15,11 +15,9 @@ type FormFieldProps = {
   onBlur: () => void;
 };
 
-// Picks the right atom for the field type and wraps it in a Field.
 export function FormField({ field, id, value, error, onChange, onBlur }: FormFieldProps) {
   const required = isRequired(field);
 
-  // Tell screen readers which hint/error text belongs to this input
   const describedBy = [field.hint && `${id}-hint`, error && `${id}-error`]
     .filter(Boolean)
     .join(' ');

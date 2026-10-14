@@ -1,7 +1,5 @@
 import type { FieldConfig } from '../../design-system/form/types';
 
-// The whole lead form is described here.
-// To add a field, add an entry to this list.
 export const leadFormConfig: FieldConfig[] = [
   {
     name: 'fullName',

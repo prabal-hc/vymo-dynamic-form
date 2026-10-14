@@ -1,9 +1,3 @@
-/*
-  This file owns the form layout.
-  Mobile and tablet (up to 1024px): one column, submit button sticks to the bottom.
-  Desktop (over 1024px): two columns, submit button sits at the end of the form.
-*/
-
 .grid {
   display: grid;
   grid-template-columns: 1fr;

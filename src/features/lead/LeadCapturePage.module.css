@@ -1,5 +1,3 @@
-/* Page layout: full width on a phone, a centred card on bigger screens */
-
 .page {
   max-width: 880px;
   margin: 0 auto;

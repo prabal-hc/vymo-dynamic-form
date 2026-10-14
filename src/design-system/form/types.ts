@@ -20,13 +20,10 @@ export type FieldConfig = {
   placeholder?: string;
   autoComplete?: string;
   inputMode?: 'text' | 'email' | 'numeric' | 'tel';
-  options?: SelectOption[]; // only for "select"
+  options?: SelectOption[];
   validations?: ValidationRule[];
-  // Show this field only when another field has a certain value
   showWhen?: { field: string; equals: FieldValue };
-  // On desktop: "half" takes one of the two columns, "full" takes the whole row
   width?: 'half' | 'full';
 };
 
-// Any function that takes the config and the values and returns errors
 export type ValidateFn = (config: FieldConfig[], values: FormValues) => FormErrors;
